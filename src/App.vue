@@ -1,33 +1,24 @@
 <template>
-    <Navbar />
     <div class="app">
-        <router-view />
-        <ConvertationHistory v-if="shouldShow" />
+        <component :is="currentLayout">
+            <router-view />
+        </component>
     </div>
-
-    <FooterComponent />
 </template>
 
 <script>
-import Navbar from '@/components/UI/NavBar.vue'
-import ConvertationHistory from './components/UI/ConvertationHistory.vue'
+import defaultLayout from '@/layouts/defaultLayout.vue'
+import currencyLayout from '@/layouts/currencyLayout.vue'
 import { mapMutations } from 'vuex'
 export default {
     name: 'App',
     components: {
-        Navbar,
-        ConvertationHistory,
+        defaultLayout,
+        currencyLayout,
     },
     computed: {
-        shouldShow() {
-            if (
-                this.$route.path === '/converter' ||
-                this.$route.path === '/converter/currencies' ||
-                this.$route.path === '/converter/result'
-            ) {
-                return true
-            }
-            return false
+        currentLayout() {
+            return `${this.$route.meta.layout}Layout`
         },
     },
 
@@ -55,16 +46,5 @@ export default {
     box-sizing: border-box;
     font-family: 'Blinker', sans-serif;
     font-family: 'Roboto', sans-serif;
-}
-
-.app {
-    position: absolute;
-    top: 80px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    width: 100%;
 }
 </style>
