@@ -47,7 +47,7 @@ const selectedBank = ref('');
 
 const accept = (): void => {
     !amount.value || !selectedBank.value
-        ? Notiflix.Notify.failure('Введите сумму и выберите банк!')
+        ? Notiflix.Notify.failure('Input the amount and select the bank!!')
         : convert();
 };
 
