@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
     root: true,
     env: {
         node: true,
@@ -30,3 +30,5 @@ module.exports = {
     },
     plugins: ['@typescript-eslint', 'prettier'],
 };
+
+export default config;

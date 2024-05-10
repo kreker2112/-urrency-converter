@@ -9,7 +9,7 @@
                 button-style="cancel-result"
                 @click="cancelOperation"
             >
-                Вернуться в начало
+                Back to the beginning
             </ButtonComponent>
         </div>
     </div>

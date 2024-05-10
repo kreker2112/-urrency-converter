@@ -12,7 +12,7 @@
             button-style="currency-input_cleanup"
             @click="clearInput"
         >
-            Очистить
+            Clear
         </ButtonComponent>
     </div>
 </template>

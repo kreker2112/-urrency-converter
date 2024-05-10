@@ -10,7 +10,7 @@ import directives from '@/directives';
 
 import store from '@/store';
 
-import { ComponentWithname } from '@/interfaces/currency';
+// import { ComponentWithname } from '@/interfaces/currency';
 
 import './assets/scss/global.scss';
 
@@ -18,8 +18,8 @@ const app = createApp({
     render: () => h(App),
 });
 
-(components as ComponentWithname[]).forEach((component) => {
-    app.component(component.name, component);
+(components as any).forEach((component: any) => {
+    app.component(component.__name, component);
 });
 
 directives.forEach((directive) => {

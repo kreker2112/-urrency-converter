@@ -1,7 +1,7 @@
 <template>
     <div class="navbar">
         <div class="navbar_title" @click="$router.push('/')">
-            Личный кабинет предпринимателя
+            Entrepreneur's personal account
         </div>
         <div class="navbar__btns">
             <ButtonComponent
@@ -20,11 +20,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { ref } from 'vue';
 
 const navButtons = ref([
-    { id: uuidv4(), name: 'Конвертер валют', link: '/converter' },
-    { id: uuidv4(), name: 'Поступления', link: '/funds' },
-    { id: uuidv4(), name: 'Налоговые обязанности', link: '/#' },
-    { id: uuidv4(), name: 'Уплата налогов', link: '/#' },
-    { id: uuidv4(), name: 'О сайте', link: '/#' },
+    { id: uuidv4(), name: 'Currency converter', link: '/converter' },
+    { id: uuidv4(), name: 'Receipts', link: '/funds' },
+    { id: uuidv4(), name: 'Tax obligations', link: '/#' },
+    { id: uuidv4(), name: 'Paying taxes', link: '/#' },
+    { id: uuidv4(), name: 'About', link: '/#' },
 ]);
 </script>
 
